@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <a href="logout">Выход({{user.username}})</a>
+{% else %}
+    <input value="Вход" type="button" onclick="location.href='login'" />
+    <input value="Регистрация" type="button" onclick="location.href='register'" />
+{% endif %}
+</body>
+</html>

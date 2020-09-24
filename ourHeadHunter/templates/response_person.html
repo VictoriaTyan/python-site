@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Откликнуться</title>
+</head>
+<body>
+    <a href="../..">Назад</a>
+    <h1>{{ form.vacancy.vacancy_name }}</h1>
+    <h2>{{ form.vacancy.company }}</h2>
+    <p>Зарплата: {{ form.vacancy.salary }}</p>
+    <p>Категория: {{ form.vacancy.category }}</p>
+    <p>Описание: {{ form.vacancy.description }}</p>
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Откликнуться</button>
+        </form>
+</body>
+</html>

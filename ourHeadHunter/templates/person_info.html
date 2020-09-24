@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о работнике</title>
+    <style>
+        .logout {
+        position: fixed; /* Фиксированное положение */
+        right: 10px; /* Расстояние от правого края окна браузера */
+        top: 10px; /* Расстояние сверху */
+        padding: 10px; /* Поля вокруг текста */
+       }
+    </style>
+</head>
+<body>
+    <a href="../..">Назад</a><a href="../../../logout" class = "logout" >Выход({{user.username}})</a>
+    <h1>{{ person.first_name }} {{ person.second_name }} {{ person.surname }}</h1>
+    <p>Дата рождения: {{ person.date_of_birth }}</p>
+    <p>О себе: {{ person.about }}</p>
+</body>
+</html>

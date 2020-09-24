@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Написать</title>
+</head>
+<body>
+    <a href="../..">Назад</a>
+    <h1>{{ form.person.first_name }}  {{ form.person.second_name }}  {{ form.person.surname }}</h1>
+    <p>Дата рождения: {{ form.person.date_of_birth }}</p>
+    <p>О себе: {{ form.person.about }}</p>
+    <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Откликнуться</button>
+    </form>
+</body>
+</html>

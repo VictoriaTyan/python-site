@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление</title>
+</head>
+<body>
+    <h1>Вы действительно хотите удалить вакансию?</h1>
+    <h2><b>{{ vacancy.vacancy_name }} </b></h2>
+    <p>Зарплата:  {{ vacancy.salary }}</p>
+    <p>Категория:  {{ vacancy.category.category_name }}</p>
+    <p>{{ vacancy.description }}</p>
+    <input value="Да" type="button" onclick="location.href='confirm_delete'" />|<input value="Отмена" type="button" onclick="location.href='../..'" />
+</body>
+</html>

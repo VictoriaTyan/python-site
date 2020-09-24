@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" a href="index.css">
+    <title>Мои отклики</title>
+    <style type="text/css">
+    .logout {
+        position: fixed; /* Фиксированное положение */
+        right: 10px; /* Расстояние от правого края окна браузера */
+        top: 10px; /* Расстояние сверху */
+        padding: 10px; /* Поля вокруг текста */
+       }
+    TABLE {
+       margin: 10px;
+    }
+    TD, TH {
+        text-align: left; /* Выравнивание по центру */
+        padding: 3px; /* Поля вокруг текста */
+        width: 300px;
+        height: 30px;
+    }
+    TH {
+        border-bottom: 4px black; /* Двойная линия снизу */
+    }
+  </style>
+</head>
+<body>
+    <a href="../ ">Назад</a>
+    <a href="../../logout" class = "logout" >Выход({{user.username}})</a>
+    <table>
+        <tr>
+            <th>Компания</th>
+            <th>Сообщение</th>
+        </tr>
+        {% for item in responses %}
+        <tr>
+            <td><a href="company_info/{{item.id}}">{{ item.company }}</a></td>
+            <td>{{ item.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

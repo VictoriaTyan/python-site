@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Резюме пользователей</title>
+    <style type="text/css">
+        .logout {
+        position: fixed; /* Фиксированное положение */
+        right: 10px; /* Расстояние от правого края окна браузера */
+        top: 10px; /* Расстояние сверху */
+        padding: 10px; /* Поля вокруг текста */
+       }
+    TABLE {
+       margin: 10px;
+    }
+    TD, TH {
+        text-align: left; /* Выравнивание по центру */
+        padding: 3px; /* Поля вокруг текста */
+        width: 350px;
+        height: 30px;
+    }
+    TH {
+        border-bottom: 4px black; /* Двойная линия снизу */
+    }
+  </style>
+</head>
+<body>
+    <a href="../">Назад</a>
+    <a href="../logout" class = "logout" >Выход({{user.username}})</a>
+    <table>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>О себе</th>
+            <th>      </th>
+        </tr>
+        {% for item in resumes %}
+        <tr>
+            <td><p><b>{{ item.first_name }}   {{ item.second_name }}   {{ item.surname }}</b></p></td>
+            <td>{{ item.date_of_birth }}</td>
+            <td>{{ item.about }}</td>
+            <td><input value="Написать" type="button" onclick="location.href='response_company/{{item.id}}'" /></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+	font-family:sans-serif;
+    background: #eaf1fa;
+	margin: 0px;
+}
+
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size:30px;
+}
+
+p {
+	text-align: justify;
+	font-size:20px;
+}
+
+div .main_person {
+    width: 200px;
+    background: olivedrab;
+    padding: 5px 20px 5px 5px;
+    border: solid 1px black;
+    float: left;
+}

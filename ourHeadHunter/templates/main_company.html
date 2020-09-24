@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+       .logout {
+        position: fixed; /* Фиксированное положение */
+        right: 10px; /* Расстояние от правого края окна браузера */
+        top: 10px; /* Расстояние сверху */
+        padding: 10px; /* Поля вокруг текста */
+       }
+       TABLE {
+           margin: 10px;
+       }
+       TD, TH {
+            text-align: left; /* Выравнивание по центру */
+            padding: 3px; /* Поля вокруг текста */
+            width: 350px;
+            height: 30px;
+       }
+       TH {
+            border-bottom: 4px black; /* Двойная линия снизу */
+       }
+    </style>
+</head>
+<body>
+
+    <h1>{{ company.company_name }}</h1>
+    <p>{{ company.address }}</p>
+    <p>{{ company.about }}</p>
+    <a href="logout" class = "logout" >Выход({{user.username}})</a>
+    <input value="Посмотреть резюме" type="button" onclick="location.href='summary_list'" />
+    <input value="Полученные отклики" type="button" onclick="location.href='company_responses'" />
+    <hr>
+    <h2> Список моих вакансий </h2>
+    <input value="Добавить вакансию" type="button" onclick="location.href='add_vacancy'" />
+    <table>
+    <hr>
+        <tr>
+            <th>Категория</th>
+            <th>Вакансия</th>
+            <th>Оклад</th>
+            <th>Описание</th>
+        </tr>
+        {% for vac in vacancies %}
+        <tr>
+            <td>{{ vac.category.category_name }}</td>
+            <td><b>{{ vac.vacancy_name }} </b></td>
+            <td>{{ vac.salary }}</td>
+            <td>{{ vac.description }}</td>
+            <td><input value="Редактировать" type="button" onclick="location.href='edit_vacancy/{{vac.id}}'" /></td>
+            <td><input value="Удалить" type="button" onclick="location.href='delete_vacancy/{{vac.id}}'" /></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

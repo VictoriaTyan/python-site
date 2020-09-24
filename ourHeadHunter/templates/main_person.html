@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>Работник</title>
+    <style>
+        .logout {
+        position: fixed; /* Фиксированное положение */
+        right: 10px; /* Расстояние от правого края окна браузера */
+        top: 10px; /* Расстояние сверху */
+        padding: 10px; /* Поля вокруг текста */
+       }
+    </style>
+</head>
+<body>
+    <div class="main_person">
+        <a href="logout" class = "logout" >Выход({{user.username}})</a>
+        <h1>{{ person.first_name }} {{ person.second_name }} {{ person.surname }}</h1>
+        <p>{{ person.date_of_birth }}</p>
+        <p>{{ person.about }}</p>
+        <input value="Посмотреть вакансии" type="button" onclick="location.href='vacancies_list'" />
+        <input value="Полученные отклики" type="button" onclick="location.href='person_responses'" />
+    </div>
+</body>
+</html>
